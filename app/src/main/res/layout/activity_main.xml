@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".View.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewSearchResults"
+        app:layout_constraintEnd_toEndOf="@id/recyclerViewSearchResults"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/textInputLayoutSearchlayout"
+        android:weightSum="8"
+        android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutSearch"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radius"
+                android:hint="@string/edit_text_search"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:tint="@color/white"
+            android:id="@+id/list_btn"
+            android:background="@android:color/transparent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_list_24"/>
+        <ImageButton
+            android:layout_width="0dp"
+            android:id="@+id/bookmark_btn"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:tint="@color/white"
+            android:src="@drawable/ic_baseline_bookmark_white"/>
+    </LinearLayout>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="visible"
+        android:scaleX="0.10"
+        android:scaleY="0.10"
+        android:indeterminateTint="@color/white"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_below="@id/textInputLayoutSearchlayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
